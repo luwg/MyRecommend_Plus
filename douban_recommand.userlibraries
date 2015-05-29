@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="lib">
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/asm.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/jxl.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/jaas.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/jstl.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/log4j.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/jta-1.1.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/ojdbc14.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/standard.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/xml-apis.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/asm-attrs.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/c3p0-0.9.1.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/hibernate3.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/htmlparser.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/antlr-2.7.7.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/aopalliance.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/cglib-2.1.3.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/dom4j-1.6.1.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/servlet-api.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/commons-dbcp.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/commons-pool.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/xerces-2.6.2.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/ehcache-1.6.2.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/commons-io-1.2.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/jdbc2_0-stdext.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/hibernate-tools.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/slf4j-api-1.5.8.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/jaxen-1.1-beta-7.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/quartz-all-1.6.0.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/javassist-3.9.0.GA.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/slf4j-log4j12-1.5.8.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/commons-logging-1.0.4.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/jackson-core-asl-1.6.4.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/commons-fileupload-1.2.2.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/jackson-mapper-asl-1.6.4.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/commons-collections-3.2.1.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/mysql-connector-java-5.1.6-bin.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.aop-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.asm-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.orm-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.web-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.core-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.jdbc-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.test-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.beans-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.context-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.expression-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.transaction-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.web.servlet-3.0.5.RELEASE.jar" />
+    <archive path="C:/Users/shenao/IdeaProjects/douban_recommand/lib/org.springframework.context.support-3.0.5.RELEASE.jar" />
+  </library>
+</eclipse-userlibraries>
+

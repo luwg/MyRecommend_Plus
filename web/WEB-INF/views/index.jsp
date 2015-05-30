@@ -62,7 +62,7 @@
       <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>管理员操作</span></a>
         <ul>
           <li><a href="/resources/form-common.html">用户管理</a></li>
-          <li><a href="/resources/form-validation.html">Form with Validation</a></li>
+          <li><a href="/resources/form-validation.html">电影管理</a></li>
           <li><a href="/resources/form-wizard.html">Form with Wizard</a></li>
         </ul>
       </li>

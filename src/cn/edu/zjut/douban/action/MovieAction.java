@@ -1,5 +1,7 @@
 package cn.edu.zjut.douban.action;
 
+import cn.edu.zjut.douban.form.MovieForm;
+import cn.edu.zjut.douban.pojo.Category;
 import cn.edu.zjut.douban.pojo.Comment;
 import cn.edu.zjut.douban.pojo.Movie;
 import cn.edu.zjut.douban.pojo.User;
@@ -33,10 +35,20 @@ public class MovieAction {
 
     @RequestMapping(value = "hotMovie", method = RequestMethod.GET)
     public ModelAndView hotMovie() {
-        List<Movie> movies = movieService.getAllMovie();
+        List<Category> categories = movieService.getAllCategories();
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("categories", categories);
+        mv.setViewName("hotMovie");
+        return mv;
+    }
+
+    @RequestMapping(value = "/getMovies", method = RequestMethod.GET)
+    public ModelAndView getMovies(MovieForm movieForm) throws Exception {
+        movieForm.setTag(new String(movieForm.getTag().getBytes("ISO-8859-1"), "utf-8"));
+        List<Movie> movies = movieService.getMovies(movieForm);
         ModelAndView mv = new ModelAndView();
         mv.addObject("movies", movies);
-        mv.setViewName("hotMovie");
+        mv.setViewName("movies");
         return mv;
     }
 

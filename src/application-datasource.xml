@@ -41,6 +41,8 @@
 				<value>/cn/edu/zjut/douban/hibernate/mapping/Comment.hbm.xml</value>
 				<value>/cn/edu/zjut/douban/hibernate/mapping/Movie.hbm.xml</value>
 				<value>/cn/edu/zjut/douban/hibernate/mapping/Recommand.hbm.xml</value>
+				<value>/cn/edu/zjut/douban/hibernate/mapping/Category.hbm.xml</value>
+				<value>/cn/edu/zjut/douban/hibernate/mapping/MovieCategory.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

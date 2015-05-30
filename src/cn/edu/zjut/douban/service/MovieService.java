@@ -1,6 +1,9 @@
 package cn.edu.zjut.douban.service;
 
+import cn.edu.zjut.douban.dao.CategoryDao;
 import cn.edu.zjut.douban.dao.MovieDao;
+import cn.edu.zjut.douban.form.MovieForm;
+import cn.edu.zjut.douban.pojo.Category;
 import cn.edu.zjut.douban.pojo.Comment;
 import cn.edu.zjut.douban.pojo.Movie;
 import cn.edu.zjut.douban.pojo.Recommand;
@@ -8,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -19,12 +23,19 @@ public class MovieService {
     @Autowired
     private MovieDao movieDao;
 
+    @Autowired
+    private CategoryDao categoryDao;
+
     public List<Comment> getTheCommentedMovies(String userId) {
         return movieDao.findCommentsByUserId(userId);
     }
 
-    public List<Movie> getAllMovie() {
-        return movieDao.findAll();
+    public List<Movie> getMovies(MovieForm movieForm) {
+        return movieDao.findMoviesByCondition(movieForm);
+    }
+
+    public List<Category> getAllCategories() {
+        return categoryDao.findAll();
     }
 
     public List<Movie> getRecommandMovies(String userId) {

@@ -1,5 +1,6 @@
 package cn.edu.zjut.douban.dao;
 
+import cn.edu.zjut.douban.form.MovieForm;
 import cn.edu.zjut.douban.mapper.MovieMapper;
 import cn.edu.zjut.douban.pojo.Comment;
 import cn.edu.zjut.douban.pojo.Movie;
@@ -38,6 +39,28 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
             comments.add(comment);
         }
         return comments;
+    }
+
+    public List<Movie> findMoviesByCondition(MovieForm movieForm) {
+//        String hql = " select m from Movie m"
+//                   + " where m.category like ? ";
+
+        String sort = movieForm.getSort().equals("recommend")?"count(*)":movieForm.getSort();
+
+        String hql = " select m, count(*) "
+                   + " from Comment c "
+                   + " join c.movie m "
+                   + " group by m.id "
+                   + " having m.category like ? "
+                   + " order by " + sort + " desc";
+
+        List<Object[]> list = getHibernateTemplate().
+                find(hql, '%' + movieForm.getTag() + '%');
+        List<Movie> movies = new ArrayList<Movie>();
+        for (Object[] obj : list) {
+            movies.add((Movie) obj[0]);
+        }
+        return movies;
     }
 
     public List<Movie> findRecommandMovieByUserId(String userId) {

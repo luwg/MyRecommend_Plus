@@ -1,10 +1,11 @@
 package cn.edu.zjut.douban.test;
 
+import cn.edu.zjut.douban.dao.CategoryDao;
+import cn.edu.zjut.douban.dao.MovieCategoryDao;
 import cn.edu.zjut.douban.dao.MovieDao;
 import cn.edu.zjut.douban.dao.RecommandDao;
-import cn.edu.zjut.douban.pojo.Comment;
-import cn.edu.zjut.douban.pojo.Movie;
-import cn.edu.zjut.douban.pojo.Recommand;
+import cn.edu.zjut.douban.form.MovieForm;
+import cn.edu.zjut.douban.pojo.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,8 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.net.URL;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.net.URLDecoder;
+import java.util.*;
 
 /**
  * Created by shenao on 2015/5/21.
@@ -31,9 +31,26 @@ public class TestDao {
     @Autowired
     private RecommandDao recommandDao;
 
+    @Autowired
+    private CategoryDao categoryDao;
+
+    @Autowired
+    private MovieCategoryDao movieCategoryDao;
+
     @Test
     public void test1() {
         List<Comment> commentList = movieDao.findCommentsByUserId("103172455");
+    }
+
+    @Test
+    public void testMovie() {
+        MovieForm movieForm = new MovieForm();
+        movieForm.setTag("剧情");
+        movieForm.setSort("release_date");
+        List<Movie> movies = movieDao.findMoviesByCondition(movieForm);
+        for (Movie movie : movies) {
+            System.out.println(movie.getTitle());
+        }
     }
 
     @Test
@@ -74,6 +91,50 @@ public class TestDao {
         }
         long end = System.currentTimeMillis();
         System.out.println(end - begin);
+    }
+
+
+    @Test
+    public void extractMovieCategory() {
+        List<Movie> movies = movieDao.findAll();
+        Set<String> categorys = new HashSet<String>();
+        for (Movie movie : movies) {
+            String[] data = movie.getCategory().split("/");
+            for (String category : data) {
+                if (!category.isEmpty()) {
+                    categorys.add(category);
+                }
+
+            }
+        }
+        for (String name : categorys) {
+            Category category = new Category();
+            category.setName(name);
+            categoryDao.save(category);
+        }
+    }
+
+    @Test
+    public void insertMovieCategoryRelation() {
+        List<Movie> movies = movieDao.findAll();
+        for (Movie movie : movies) {
+            String[] names = movie.getCategory().split("/");
+            for (String name : names) {
+                if (!name.isEmpty()) {
+                    MovieCategory movieCategory = new MovieCategory();
+                    Category category = categoryDao.findByName(name);
+                    movieCategory.setMovie(movie);
+                    movieCategory.setCategory(category);
+                    movieCategoryDao.save(movieCategory);
+                }
+            }
+        }
+    }
+
+    @Test
+    public void testEncode() throws Exception {
+        String str = "%E6%AD%A6%E4%BE%A0";
+        System.out.println(URLDecoder.decode(str, "GBK"));
     }
 
 }

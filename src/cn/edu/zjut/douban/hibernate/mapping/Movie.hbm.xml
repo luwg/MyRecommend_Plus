@@ -18,7 +18,7 @@
         </property>
 
         <property name="rate" type="double">
-            <column name="rate"/>
+            <column name="movie_rate"/>
         </property>
 
         <property name="category" type="string">

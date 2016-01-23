@@ -6,29 +6,27 @@
     <link rel="stylesheet"
           href="http://img3.douban.com/f/movie/8f41875f6bad40f1282ef0e7ab250d9d93b171c1/css/movie/home.css">
     <script type="text/javascript">
-        $(function() {
+
+        function loadMovies() {
             $('#hotMovie').load("getMovies?tag=&sort=recommend");
-           $('.tag-list>label').hover(function() {
-               $(this).addClass("activate");
-           });
-            $('.tag-list>label').mouseleave(function() {
-                var $input = $(this).children('input');
-                if ($input.attr("checked") != "checked") {
-                    $(this).removeClass("activate");
-                }
-            });
-            $('.tag-list>label').click(function() {
-                $(this).addClass('activate').siblings().removeClass('activate');
-                $(this).children('input').attr('checked', 'checked');
-                $('#hotMovie').load('getMovies?' + $('#movieForm').serialize());
-            });
+        }
+        $('.tag-list>label').hover(function() {
+            $(this).addClass("activate");
+        });
+        $('.tag-list>label').mouseleave(function() {
+            var $input = $(this).children('input');
+            if ($input.attr("checked") != "checked") {
+                $(this).removeClass("activate");
+            }
+        });
+        $('.tag-list>label').click(function() {
+            $(this).addClass('activate').siblings().removeClass('activate');
+            $(this).children('input').attr('checked', 'checked');
+            $('#hotMovie').load('getMovies?' + $('#movieForm').serialize());
+        });
 
-            $('.sort input').change(function() {
-                $('#hotMovie').load('getMovies?' + $('#movieForm').serialize());
-            });
-
-
-
+        $('.sort input').change(function() {
+            $('#hotMovie').load('getMovies?' + $('#movieForm').serialize());
         });
     </script>
 </head>
@@ -99,6 +97,12 @@
 
     </div>
 </div>
+
+
+<script type="text/javascript">
+    $('#hotMovie').load("getMovies?tag=&sort=recommend");
+
+</script>
 
 </body>
 </html>

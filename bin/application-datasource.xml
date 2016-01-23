@@ -37,9 +37,9 @@
 		<property name="dataSource" ref="MyDataSource"></property>
 		<property name="mappingResources">
 			<list>
-				<value>/cn/edu/zjut/douban/hibernate/mapping/User.hbm.xml</value>
-				<value>/cn/edu/zjut/douban/hibernate/mapping/Comment.hbm.xml</value>
-				<value>/cn/edu/zjut/douban/hibernate/mapping/Movie.hbm.xml</value>
+				<value>/cn/edu/csu/douban/hibernate/mapping/User.hbm.xml</value>
+				<value>/cn/edu/csu/douban/hibernate/mapping/Comment.hbm.xml</value>
+				<value>/cn/edu/csu/douban/hibernate/mapping/Movie.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

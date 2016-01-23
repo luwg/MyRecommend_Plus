@@ -44,7 +44,7 @@
                                         <li><a href="javascript:void(0);" class="five-stars <c:if test="${comment.rate==50}">current-rating</c:if>" star:value="500">50</a></li>
                                     </ul>
                                     <span id="stars2-tips" class="result"></span>
-                                    <input type="hidden" id="stars2-input" name="b" value="" size="2" />
+                                    <input type="hidden" name="b" value="" size="2" />
                                 </div>
                             </td>
                         </tr>

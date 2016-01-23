@@ -3,7 +3,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="cn.edu.zjut.douban.pojo">
-    <class name="Movie" table="t_hot_movie">
+    <class name="cn.edu.csu.douban.pojo.Movie" table="t_hot_movie">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
@@ -43,7 +43,7 @@
 
         <set name="comments" cascade="all" inverse="true" lazy="true">
             <key column="movie_id"></key>
-            <one-to-many class="cn.edu.zjut.douban.pojo.Comment"/>
+            <one-to-many class="cn.edu.csu.douban.pojo.Comment"/>
         </set>
     </class>
 </hibernate-mapping>

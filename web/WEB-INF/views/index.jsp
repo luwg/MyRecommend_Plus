@@ -56,36 +56,15 @@
       <li><a href="javascript:void(0);" onclick="loadPage(this, '/myCommentedMovies');"><i class="icon icon-pencil"></i> <span>我评价过的电影</span></a> </li>
       <li><a href="javascript:voie(0);" onclick="loadPage(this, '/hotMovie')"><i class="icon icon-inbox"></i> <span>热门电影</span></a> </li>
       <li><a href="javascript:voie(0);" onclick="loadPage(this, '/recommandMovie')"><i class="icon icon-signal"></i> <span>电影推荐</span></a> </li>
-      <li><a href="/resources/tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
-      <li><a href="/resources/grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
+      <li><a href="javascript:voie(0);" onclick="loadPage(this, '/getRecommentBook')"><i class="icon icon-signal"></i> <span>图书推荐</span></a> </li>
       <c:if test="${user.userId == 'admin'}">
       <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>管理员操作</span></a>
         <ul>
-          <li><a href="/resources/form-common.html">用户管理</a></li>
-          <li><a href="/resources/form-validation.html">电影管理</a></li>
-          <li><a href="/resources/form-wizard.html">Form with Wizard</a></li>
+          <li><a href="javascript:void(0);" onclick="loadPage(this, '/user/userManage')">用户管理</a></li>
+          <li><a href="javascript:void(0);" onclick="loadPage(this, '/movieManage')">电影管理</a></li>
         </ul>
       </li>
       </c:if>
-      <li><a href="/resources/buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
-      <li><a href="/resources/interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
-      <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Addons</span> <span class="label label-important">5</span></a>
-        <ul>
-          <li><a href="/resources/index2.html">Dashboard2</a></li>
-          <li><a href="/resources/gallery.html">Gallery</a></li>
-          <li><a href="/resources/calendar.html">Calendar</a></li>
-          <li><a href="/resources/chat.html">Chat option</a></li>
-        </ul>
-      </li>
-      <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important">4</span></a>
-        <ul>
-          <li><a href="/resources/error403.html">Error 403</a></li>
-          <li><a href="/resources/error404.html">Error 404</a></li>
-          <li><a href="/resources/error405.html">Error 405</a></li>
-          <li><a href="/resources/error500.html">Error 500</a></li>
-        </ul>
-      </li>
-
     </ul>
   </div>
   <div id="content">

@@ -17,12 +17,12 @@
 	<mvc:interceptors>
 	    <mvc:interceptor>
 	        <mvc:mapping path="/"/>
-	        <bean class="cn.edu.zjut.douban.interceptor.LoginInterceptor"></bean>
+	        <bean class="cn.edu.csu.douban.interceptor.LoginInterceptor"></bean>
 	    </mvc:interceptor>
 	</mvc:interceptors>
 	
 	<!-- 扫描所有控制器组件 -->
-	<context:component-scan base-package="cn.edu.zjut.douban.action"/>
+	<context:component-scan base-package="cn.edu.csu.douban.action"/>
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>

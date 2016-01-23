@@ -43,7 +43,7 @@
   height: auto;
   line-height: normal;
   vertical-align: baseline;
-  background-image: none !important;
+  /**background-image: none !important;**/
   background-position: 0% 0%;
   background-repeat: repeat;
 }

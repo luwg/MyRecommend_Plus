@@ -24,6 +24,7 @@
   <div class="login">
     <h1>登录电影推荐系统</h1>
     <form method="post" action="/loginAction">
+      <p><span style="color:red;">${login_msg}</span></p>
       <p><input type="text" name="userId" value="" placeholder="Username"></p>
       <p><input type="password" name="password" value="" placeholder="Password"></p>
 

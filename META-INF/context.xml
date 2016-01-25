@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<Resource name="jdbc/movie" auth="Container" type="javax.sql.DataSource"
+          username="root"
+          password="916568"
+          driverClassName="com.mysql.jdbc.Driver"
+          url="jdbc:mysql://localhost:3306/douban_recommand"
+          maxActive="15"
+          maxIdle="7"
+          defaultTransactionIsolation="READ_COMMITTED"
+          validationQuery="Select 1" />
+    </Context>

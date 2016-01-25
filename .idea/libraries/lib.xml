@@ -1,58 +1,10 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/web/lib/aopalliance.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.context.support-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.core-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.asm-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/jta-1.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/quartz-all-1.6.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/xerces-2.6.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/antlr-2.7.7.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/jxl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/cglib-2.1.3.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/htmlparser.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/jaxen-1.1-beta-7.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/jackson-mapper-asl-1.6.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/commons-dbcp.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/ehcache-1.6.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/xml-apis.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.transaction-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.orm-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/servlet-api.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.context-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/commons-collections-3.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/ojdbc14.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.web.servlet-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/jstl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/slf4j-log4j12-1.5.8.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.expression-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.jdbc-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/hibernate-tools.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/standard.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.aop-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/commons-logging-1.0.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/log4j.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/c3p0-0.9.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/jdbc2_0-stdext.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/asm-attrs.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/asm.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/commons-io-1.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/mysql-connector-java-5.1.6-bin.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.test-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.web-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/commons-fileupload-1.2.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/hibernate3.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/slf4j-api-1.5.8.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/dom4j-1.6.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/org.springframework.beans-3.0.5.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/commons-pool.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/jaas.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/jackson-core-asl-1.6.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/lib/javassist-3.9.0.GA.jar!/" />
+      <root url="file://$PROJECT_DIR$/web/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/web/lib" recursive="false" />
   </library>
 </component>

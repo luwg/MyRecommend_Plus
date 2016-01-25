@@ -42,7 +42,8 @@
                     '/user/save',
                     {'userId':editRow['userId'],
                     'name':editRow['name'],
-                    'password':editRow['password']},
+                    'password':editRow['password'],
+                    'favorite':editRow['favorite']},
                     function(isOk) {
                         if (isOk) {
                             $('#dg').datagrid('acceptChanges');
@@ -136,8 +137,9 @@
     <thead>
     <tr>
         <th data-options="field:'userId', align:'center', editor:'textbox', width:180">用户ID</th>
-        <th data-options="field:'name',width:180,align:'center',editor:'textbox'">用户名</th>
-        <th data-options="field:'password',width:180,align:'center',editor:'textbox'">密码</th>
+        <th data-options="field:'name',width:120,align:'center',editor:'textbox'">用户名</th>
+        <th data-options="field:'password',width:120,align:'center',editor:'textbox'">密码</th>
+        <th data-options="field:'favorite',width:120,align:'center',editor:'textbox'">兴趣爱好</th>
         <th data-options="width:160, field:'action', align:'center',
             formatter:function(value,row, index){
                 if (row.editing) {

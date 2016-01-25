@@ -67,7 +67,7 @@ public class MovieAction {
     @RequestMapping(value = "/recommandMovie", method = RequestMethod.GET)
     public ModelAndView recommandMovie(HttpSession session) {
         User user = (User) session.getAttribute("user");
-        List<Movie> recommandMovie = movieService.getRecommandMovies(user.getUserId());
+        List<Movie> recommandMovie = movieService.getRecommandMovies(user);
         ModelAndView mv = new ModelAndView();
         mv.addObject("movies", recommandMovie);
         mv.setViewName("recommendMovie");

@@ -110,4 +110,13 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
         return getHibernateTemplate().find(hql, userId);
     }
 
+    public List<Movie> findMoviesByCategory(String favorite) {
+
+        String hql = " select m"
+                + " from Movie m "
+                + " where m.category like ? "
+                + " order by m.rate desc";
+
+        return getHibernateTemplate().find(hql, '%' + favorite + '%');
+    }
 }

@@ -8,10 +8,12 @@ import cn.edu.csu.douban.form.PageForm;
 import cn.edu.csu.douban.pojo.Category;
 import cn.edu.csu.douban.pojo.Comment;
 import cn.edu.csu.douban.pojo.Movie;
+import cn.edu.csu.douban.pojo.User;
 import cn.edu.csu.douban.util.BeanUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -57,12 +59,13 @@ public class MovieService {
         return categoryDao.findAll();
     }
 
-    public List<Movie> getRecommandMovies(String userId) {
-        List<Movie> movies = movieDao.findRecommandMovieByUserId(userId);
-        if (movies.size()>0) {
-            return movies.subList(0, 12);
+    public List<Movie> getRecommandMovies(User user) {
+        List<Movie> movies = new ArrayList<Movie>();
+        movies = movieDao.findRecommandMovieByUserId(user.getUserId());
+        if (movies.size() == 0) {
+            movies = movieDao.findMoviesByCategory(user.getFavorite());
         }
-        return movies;
+        return movies.size()>12?movies.subList(0,12):movies;
     }
 
     public void updateMovie(Movie movie) {

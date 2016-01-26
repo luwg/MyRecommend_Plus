@@ -83,22 +83,22 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
 
         String sort = movieForm.getSort().equals("recommend")?"count(*)":movieForm.getSort();
 
-/*        String hql = " select m, count(*) "
+        String hql = " select m, count(*) "
                    + " from Comment c "
                    + " join c.movie m "
                    + " group by m.id "
                    + " having m.category like ? "
-                   + " order by " + sort + " desc";*/
-        String hql = "select m from Movie m";
+                   + " order by " + sort + " desc";
+/*        String hql = "select m from Movie m";
         return getHibernateTemplate().
-                find(hql);
-/*        List<Object[]> list = getHibernateTemplate().
-                find(hql, '%' + movieForm.getTag() + '%');*/
-/*        List<Movie> movies = new ArrayList<Movie>();
+                find(hql);*/
+        List<Object[]> list = getHibernateTemplate().
+                find(hql, '%' + movieForm.getTag() + '%');
+        List<Movie> movies = new ArrayList<Movie>();
         for (Object[] obj : list) {
             movies.add((Movie) obj[0]);
         }
-        return movies;*/
+        return movies;
     }
 
     public List<Movie> findRecommandMovieByUserId(int userId) {

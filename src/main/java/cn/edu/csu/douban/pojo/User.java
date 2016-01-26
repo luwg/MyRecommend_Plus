@@ -20,6 +20,7 @@ public class User implements Serializable {
 
     private String favorite;
 
+    private String password_validate;
     private Set<Comment> comments = new HashSet<Comment>();
 
     public int getUserId() {
@@ -77,5 +78,13 @@ public class User implements Serializable {
 
     public void setFavorite(String favorite) {
         this.favorite = favorite;
+    }
+
+    public String getPassword_validate() {
+        return password_validate;
+    }
+
+    public void setPassword_validate(String password_validate) {
+        this.password_validate = password_validate;
     }
 }

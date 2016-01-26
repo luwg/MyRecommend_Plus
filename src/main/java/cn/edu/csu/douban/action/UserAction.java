@@ -63,10 +63,22 @@ public class UserAction {
     @RequestMapping(value = "/registerCommit", method = RequestMethod.POST)
     public ModelAndView registerResult(User user,HttpSession session) {
         ModelAndView mv = new ModelAndView();
-        if (save(user)) {
-            session.setAttribute("user", user);
-            mv.setViewName("redirect:/");
+        User dbuser = userService.findUserByUserName(user.getName());
+        if (!user.getPassword().equals(user.getPassword_validate())) {
+            mv.addObject("register_msg","两次输入的密码不一样哦，请重新输入");
+            mv.setViewName("register");
+            return mv;
+        }
+        if (dbuser==null) {
+            if (save(user)) {
+                session.setAttribute("user", user);
+                mv.setViewName("redirect:/");
+            }else{
+                mv.addObject("register_msg","注册失败，请重新注册");
+                mv.setViewName("register");
+            }
         }else{
+            mv.addObject("register_msg","该昵称已经被注册,客官换个喽");
             mv.setViewName("register");
         }
         return mv;

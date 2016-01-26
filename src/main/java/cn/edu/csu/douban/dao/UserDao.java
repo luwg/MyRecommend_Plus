@@ -43,4 +43,10 @@ public class UserDao extends BaseHibernateDao<User, Integer> {
         User user = findById(userId);
         delete(user);
     }
+
+    public User findUserByUserName(String name) {
+        String hql = " from User u where u.name=?";
+        List<User> list = getHibernateTemplate().find(hql, name);
+        return list.size()==0?null:list.get(0);
+    }
 }

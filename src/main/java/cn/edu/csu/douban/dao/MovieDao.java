@@ -111,12 +111,18 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
     }
 
     public List<Movie> findMoviesByCategory(String favorite) {
+        String favoriteFormate;
+        if (favorite.contains(",")) {
+            favoriteFormate =favorite.split(",")[0];
+        }else{
+            favoriteFormate=favorite;
+        }
 
         String hql = " select m"
                 + " from Movie m "
                 + " where m.category like ? "
                 + " order by m.rate desc";
 
-        return getHibernateTemplate().find(hql, '%' + favorite + '%');
+        return getHibernateTemplate().find(hql, '%' + favoriteFormate + '%');
     }
 }

@@ -141,7 +141,6 @@ public class MovieAction {
         return true;
     }
 
-    @ResponseBody
     @RequestMapping(value = "/updateRecommand", method = RequestMethod.GET)
     public ModelAndView updateRecommand(HttpSession session) {
         User user = (User) session.getAttribute("user");

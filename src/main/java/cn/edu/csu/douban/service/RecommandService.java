@@ -76,35 +76,38 @@ public class RecommandService {
                                                List<Movie> allMovie, User user) {
         List<Recommand> movieRecommand = new ArrayList<Recommand>();
         Map<Movie, Comment> comments = userComments.get(user);
-        for (Movie movie : allMovie) {
-            //若该用户已经对该电影评价过，则跳过
-            if (comments.get(movie) != null) {
-                continue;
-            }
-            double sumRate = 0, sumSim = 0;
-            for (Map.Entry<User, Map<Movie, Comment>> entry : userComments.entrySet()) {
-                User other = entry.getKey();
-                //只需要别人对这部电影的评论
-                if (other.equals(user)) {
+        if (comments!=null) {
+            for (Movie movie : allMovie) {
+                //若该用户已经对该电影评价过，则跳过
+                if (comments.get(movie) != null) {
                     continue;
                 }
-                Comment comment = null;
-                if ((comment = userComments.get(other).get(movie)) != null) {
-                    //计算皮尔逊相似度
-                    double similarity = RecommandUtil.simPearson(userComments, user, other);
-                    double rate = comment.getRate();
-                    sumSim += similarity;
-                    sumRate += rate*similarity;
+                double sumRate = 0, sumSim = 0;
+                for (Map.Entry<User, Map<Movie, Comment>> entry : userComments.entrySet()) {
+                    User other = entry.getKey();
+                    //只需要别人对这部电影的评论
+                    if (other.equals(user)) {
+                        continue;
+                    }
+                    Comment comment = null;
+                    if ((comment = userComments.get(other).get(movie)) != null) {
+                        //计算皮尔逊相似度
+                        double similarity = RecommandUtil.simPearson(userComments, user, other);
+                        double rate = comment.getRate();
+                        sumSim += similarity;
+                        sumRate += rate*similarity;
+                    }
+                }
+                if (sumSim!=0&&sumRate / sumSim>MinSimRate) {
+                    Recommand recommand = new Recommand();
+                    recommand.setUser(user);
+                    recommand.setMovie(movie);
+                    recommand.setRate(sumRate / sumSim);
+                    movieRecommand.add(recommand);
                 }
             }
-            if (sumSim!=0&&sumRate / sumSim>MinSimRate) {
-                Recommand recommand = new Recommand();
-                recommand.setUser(user);
-                recommand.setMovie(movie);
-                recommand.setRate(sumRate / sumSim);
-                movieRecommand.add(recommand);
-            }
         }
+
         return movieRecommand;
     }
 
@@ -119,7 +122,10 @@ public class RecommandService {
             int count = 0;
             for (User user : users) {
                 System.out.println(++count);
-                recommandMovie.addAll(service.getRecommandMovies(userComments, allMovies, user));
+                List<Recommand> movies = service.getRecommandMovies(userComments, allMovies, user);
+                if (movies.size()>0) {
+                    recommandMovie.addAll(movies);
+                }
             }
             System.out.println(recommandMovie.size());
             service.recommandDao.turncateTable(TABLE_NAME);

@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * Created by weigang.lu on 2016/1/23.
  */
 public class MovieMapper implements RowMapper<Movie> {
-    @Override
+
     public Movie mapRow(ResultSet rs, int i) throws SQLException {
         Movie movie = new Movie();
         movie.setId(rs.getInt("id"));

@@ -63,7 +63,7 @@ public class MovieService {
         List<Movie> movies = new ArrayList<Movie>();
         movies = movieDao.findRecommandMovieByUserId(user.getUserId());
         if (movies.size() == 0) {
-            movies = movieDao.findMoviesByCategory(user.getFavorite());
+            movies = movieDao.findMoviesByCategory(user.getFavorite()==null?"爱情":user.getFavorite());
         }
         return movies.size()>12?movies.subList(0,12):movies;
     }

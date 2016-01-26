@@ -17,13 +17,14 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    public User findUserByUserId(String userId) {
+    public User findUserByUserId(int userId) {
         return userDao.findById(userId);
+        //return userDao.findById(userId);
     }
 
     public void updateUser(User user) {
         User dbUser = null;
-        if ((dbUser = userDao.findById(String.valueOf(user.getUserId()))) != null) {
+        if ((dbUser = userDao.findById(user.getUserId())) != null) {
             userDao.update(user);
         } else {
             userDao.save(user);
@@ -40,6 +41,6 @@ public class UserService {
     }
 
     public void deleteUser(User user) {
-        userDao.deleteByUserId(String.valueOf(user.getUserId()));
+        userDao.deleteByUserId(user.getUserId());
     }
 }

@@ -25,7 +25,7 @@
     <h1>欢迎注册</h1>
     <form method="post" action="/user/registerCommit">
       <p><span style="color:red;">${login_msg}</span></p>
-      <p>Id：<input type="text" name="userId" value="" placeholder="UserId"></p>
+      <%--<p>Id：<input type="text" name="userId" value="" placeholder="UserId"></p>--%>
       <p>姓名：<input type="text" name="name" value="" placeholder="UserName"></p>
       <p>密码：<input type="password" name="password" value="" placeholder="Password"></p>
       <p>请再输入一遍密码：<input type="password" name="password_v" value="" placeholder="Password"></p>

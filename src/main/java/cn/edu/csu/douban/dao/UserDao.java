@@ -12,7 +12,7 @@ import java.util.List;
  * Created by weigang.lu on 2016/1/23.
  */
 @Repository
-public class UserDao extends BaseHibernateDao<User, String> {
+public class UserDao extends BaseHibernateDao<User, Integer> {
 
     /**
      * 分页查询用户数据
@@ -39,7 +39,7 @@ public class UserDao extends BaseHibernateDao<User, String> {
         return count;
     }
 
-    public void deleteByUserId(String userId) {
+    public void deleteByUserId(int userId) {
         User user = findById(userId);
         delete(user);
     }

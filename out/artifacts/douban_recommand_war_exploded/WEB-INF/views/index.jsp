@@ -57,7 +57,7 @@
       <li><a href="javascript:voie(0);" onclick="loadPage(this, '/hotMovie')"><i class="icon icon-inbox"></i> <span>热门电影</span></a> </li>
       <li><a href="javascript:voie(0);" onclick="loadPage(this, '/recommandMovie')"><i class="icon icon-signal"></i> <span>电影推荐</span></a> </li>
       <%--<li><a href="javascript:voie(0);" onclick="loadPage(this, '/getRecommentBook')"><i class="icon icon-signal"></i> <span>图书推荐</span></a> </li>--%>
-      <c:if test="${user.userId == 'admin'}">
+      <c:if test="${user.name == 'admin'}">
       <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>管理员操作</span></a>
         <ul>
           <li><a href="javascript:void(0);" onclick="loadPage(this, '/user/userManage')">用户管理</a></li>

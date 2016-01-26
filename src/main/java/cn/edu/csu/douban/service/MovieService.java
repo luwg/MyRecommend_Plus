@@ -31,7 +31,7 @@ public class MovieService {
     @Autowired
     private CommentDao commentDao;
 
-    public List<Comment> getTheCommentedMovies(String userId) {
+    public List<Comment> getTheCommentedMovies(int userId) {
         return movieDao.findCommentsByUserId(userId);
     }
 

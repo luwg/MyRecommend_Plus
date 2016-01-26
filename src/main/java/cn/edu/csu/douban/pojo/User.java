@@ -12,7 +12,7 @@ import java.util.Set;
 @JsonIgnoreProperties(value = "comments")
 public class User implements Serializable {
 
-    private String userId;
+    private int userId;
 
     private String name;
 
@@ -22,11 +22,11 @@ public class User implements Serializable {
 
     private Set<Comment> comments = new HashSet<Comment>();
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -63,12 +63,12 @@ public class User implements Serializable {
             return false;
         }
         User user = (User) obj;
-        return user.userId.equals(this.userId);
+        return user.userId==this.userId;
     }
 
     @Override
     public int hashCode() {
-        return this.userId.hashCode();
+        return this.userId;
     }
 
     public String getFavorite() {

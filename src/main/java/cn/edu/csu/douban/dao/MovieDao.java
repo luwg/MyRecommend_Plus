@@ -24,7 +24,7 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
                                                 + " inner join c.movie m"
                                                 + " where u.userId=? ";
 
-    public List<Comment> findCommentsByUserId(String userId) {
+    public List<Comment> findCommentsByUserId(int userId) {
 
         String hql = " select c, m " + COMMENT_QUERY;
 
@@ -99,7 +99,7 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
         return movies;
     }
 
-    public List<Movie> findRecommandMovieByUserId(String userId) {
+    public List<Movie> findRecommandMovieByUserId(int userId) {
         List<Recommand> recommands = new ArrayList<Recommand>();
 
         String hql = " select m from Recommand r "

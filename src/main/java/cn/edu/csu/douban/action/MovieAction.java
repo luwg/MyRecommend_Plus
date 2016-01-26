@@ -85,7 +85,7 @@ public class MovieAction {
         List<RecommendedItem> recommendation = null;
         MyUserBasedRecommender mubr = new MyUserBasedRecommender();
         //拿到推荐的电影
-        recommendation = mubr.userBasedRecommender(Long.parseLong(user.getUserId()),10);
+        recommendation = mubr.userBasedRecommender(user.getUserId(),10);
 /*        List<Movie> recommandMovie = movieService.getRecommandMovies(user.getUserId());
         ModelAndView mv = new ModelAndView();
         mv.addObject("movies", recommandMovie);*/

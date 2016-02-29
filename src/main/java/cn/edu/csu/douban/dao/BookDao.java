@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public class BookDao extends BaseHibernateDao<Book, Integer> {
 
-    public List<Book> findRecommendBookByUserId(String userId) {
+    public List<Book> findRecommendBookByUserId(int userId) {
 
         String hql = " select b from Book b, BookRecommend br "
                    + " where b.id = br.bookId "

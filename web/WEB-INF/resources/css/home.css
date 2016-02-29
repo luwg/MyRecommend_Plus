@@ -536,6 +536,12 @@
     color: #37a
 }
 
+#gaia .item .cover-wp {
+    background: url(/f/movie/21e771816d14ede9a77a01b6c7874c4b05dd05e2/pics/movie-default-large.gif) center no-repeat;
+    background-size: 100%;
+    height: 200px;
+    overflow: hidden
+}
 
 #gaia .item strong {
     color: #e82100

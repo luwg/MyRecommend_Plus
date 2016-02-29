@@ -33,7 +33,8 @@ public class LoginAction {
 
     @RequestMapping(value = "/loginAction", method = RequestMethod.POST)
     public ModelAndView loign(User user, HttpServletRequest request, HttpSession session) {
-        User dbUser = userService.findUserByUserId(user.getUserId());
+        //User dbUser = userService.findUserByUserId(user.getUserId());
+        User dbUser = userService.findUserByUserName(user.getName());
         ModelAndView mv = new ModelAndView();
         if (loginSuccess(dbUser, user)) {
             session.setAttribute("user", dbUser);

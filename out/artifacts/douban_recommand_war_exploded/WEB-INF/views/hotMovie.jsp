@@ -3,8 +3,9 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet"
-          href="http://img3.douban.com/f/movie/8f41875f6bad40f1282ef0e7ab250d9d93b171c1/css/movie/home.css">
+<%--    <link rel="stylesheet"
+          href="http://img3.douban.com/f/movie/8f41875f6bad40f1282ef0e7ab250d9d93b171c1/css/movie/home.css">--%>
+    <link rel="stylesheet" href="/resources/css/home.css">
     <script type="text/javascript">
 
         function loadMovies() {

@@ -16,7 +16,7 @@ public class BookService {
     @Autowired
     private BookDao bookDao;
 
-    public List<Book> getRecommendBook(String userId) {
+    public List<Book> getRecommendBook(int userId) {
         return bookDao.findRecommendBookByUserId(userId);
     }
 }

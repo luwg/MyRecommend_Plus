@@ -5,7 +5,7 @@ package cn.edu.csu.douban.form;
  */
 public class PageForm {
 
-    private String userId;
+    private int userId;
 
     private int movieId;
 
@@ -38,11 +38,11 @@ public class PageForm {
     }
 
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 }

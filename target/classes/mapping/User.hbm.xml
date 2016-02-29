@@ -4,9 +4,9 @@
 
 <hibernate-mapping package="cn.edu.csu.douban.pojo">
     <class name="cn.edu.csu.douban.pojo.User" table="t_active_user">
-        <id name="userId" type="java.lang.String">
+        <id name="userId" type="java.lang.Integer">
             <column name="userid" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="name" type="string">
             <column name="name" length="100" not-null="true"/>

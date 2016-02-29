@@ -7,6 +7,8 @@ import cn.edu.csu.douban.pojo.User;
 import cn.edu.csu.douban.service.CommentService;
 import cn.edu.csu.douban.service.MovieService;
 import cn.edu.csu.douban.service.UserService;
+
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,10 +65,30 @@ public class UserAction {
     @RequestMapping(value = "/registerCommit", method = RequestMethod.POST)
     public ModelAndView registerResult(User user,HttpSession session) {
         ModelAndView mv = new ModelAndView();
-        if (save(user)) {
-            session.setAttribute("user", user);
-            mv.setViewName("redirect:/");
+        if (StringUtils.isBlank(user.getFavorite())) {
+            user.setFavorite("爱情");
+        }
+        if (StringUtils.isBlank(user.getName()) || StringUtils.isBlank(user.getPassword())) {
+            mv.addObject("register_msg","用户名和密码都要填哦");
+            mv.setViewName("register");
+            return mv;
+        }
+        if (!user.getPassword().equals(user.getPassword_validate())) {
+            mv.addObject("register_msg","两次输入的密码不一样哦，请重新输入");
+            mv.setViewName("register");
+            return mv;
+        }
+        User dbuser = userService.findUserByUserName(user.getName());
+        if (dbuser==null) {
+            if (save(user)) {
+                session.setAttribute("user", user);
+                mv.setViewName("redirect:/");
+            }else{
+                mv.addObject("register_msg","注册失败，请重新注册");
+                mv.setViewName("register");
+            }
         }else{
+            mv.addObject("register_msg","该昵称已经被注册,客官换个喽");
             mv.setViewName("register");
         }
         return mv;

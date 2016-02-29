@@ -8,6 +8,7 @@
 				
 	<!-- 启用组件自动扫描和属性注入 -->
 	<context:component-scan base-package="cn.edu.csu.douban"/>
+
 	
 	<!-- 声明事务管理Bean -->
 	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">

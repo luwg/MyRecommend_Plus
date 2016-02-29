@@ -5,7 +5,7 @@ package cn.edu.csu.douban.form;
  */
 public class UserForm {
 
-    private String userId;
+    private int userId;
 
     private int rows = 10; //每页显示多少条数据，默认显示10条
 
@@ -36,11 +36,11 @@ public class UserForm {
     }
 
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 }

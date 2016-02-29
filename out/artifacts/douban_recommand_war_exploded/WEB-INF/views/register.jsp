@@ -24,11 +24,11 @@
   <div class="login">
     <h1>欢迎注册</h1>
     <form method="post" action="/user/registerCommit">
-      <p><span style="color:red;">${login_msg}</span></p>
-      <p>Id：<input type="text" name="userId" value="" placeholder="UserId"></p>
+      <p><span style="color:red;">${register_msg}</span></p>
       <p>姓名：<input type="text" name="name" value="" placeholder="UserName"></p>
       <p>密码：<input type="password" name="password" value="" placeholder="Password"></p>
-      <p>请再输入一遍密码：<input type="password" name="password_v" value="" placeholder="Password"></p>
+      <p>请再输入一遍密码：<input type="password" name="password_validate" value="" placeholder="Password"></p>
+      <br />
       请选择您喜欢的电影类型<br /><br />
       <label><input name="favorite" type="checkbox" value="歌舞" />歌舞 </label>
       <label><input name="favorite" type="checkbox" value="恐怖" />恐怖 </label>

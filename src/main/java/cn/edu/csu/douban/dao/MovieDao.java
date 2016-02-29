@@ -24,7 +24,7 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
                                                 + " inner join c.movie m"
                                                 + " where u.userId=? ";
 
-    public List<Comment> findCommentsByUserId(String userId) {
+    public List<Comment> findCommentsByUserId(int userId) {
 
         String hql = " select c, m " + COMMENT_QUERY;
 
@@ -37,7 +37,7 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
         String hql = " select c, m " + COMMENT_QUERY;
         Session session = getHibernateTemplate().getSessionFactory().openSession();
         Query query = session.createQuery(hql);
-        query.setString(0, pageForm.getUserId());
+        query.setString(0, String.valueOf(pageForm.getUserId()));
         query.setFirstResult(pageForm.getFirstNum());
         query.setMaxResults(pageForm.getRows());
         List<Object[]> list = query.list();
@@ -89,7 +89,9 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
                    + " group by m.id "
                    + " having m.category like ? "
                    + " order by " + sort + " desc";
-
+/*        String hql = "select m from Movie m";
+        return getHibernateTemplate().
+                find(hql);*/
         List<Object[]> list = getHibernateTemplate().
                 find(hql, '%' + movieForm.getTag() + '%');
         List<Movie> movies = new ArrayList<Movie>();
@@ -99,7 +101,7 @@ public class MovieDao extends BaseHibernateDao<Movie, Integer> {
         return movies;
     }
 
-    public List<Movie> findRecommandMovieByUserId(String userId) {
+    public List<Movie> findRecommandMovieByUserId(int userId) {
         List<Recommand> recommands = new ArrayList<Recommand>();
 
         String hql = " select m from Recommand r "

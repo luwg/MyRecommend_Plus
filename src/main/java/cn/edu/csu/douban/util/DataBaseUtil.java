@@ -16,10 +16,10 @@ public class DataBaseUtil {
 			if (context == null) {
 				throw new Exception("create context failed!");
 			}
-			ds = (DataSource) context.lookup("java:comp/env/jdbc/douban_recommand");
+			ds = (DataSource) context.lookup("java:comp/env/jdbc/douban");
 			if (ds == null) {
 				Thread.sleep(2000L);
-				ds = (DataSource) context.lookup("java:comp/env/jdbc/movie");
+				ds = (DataSource) context.lookup("java:comp/env/jdbc/douban");
 				if (ds == null)
 					throw new Exception("get datasource failed!");
 			}

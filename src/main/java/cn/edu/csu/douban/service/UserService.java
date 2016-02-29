@@ -2,8 +2,6 @@ package cn.edu.csu.douban.service;
 
 import cn.edu.csu.douban.dao.UserDao;
 import cn.edu.csu.douban.form.PageForm;
-import cn.edu.csu.douban.dao.UserDao;
-import cn.edu.csu.douban.form.PageForm;
 import cn.edu.csu.douban.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +17,9 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    public User findUserByUserId(String userId) {
+    public User findUserByUserId(int userId) {
         return userDao.findById(userId);
+        //return userDao.findById(userId);
     }
 
     public void updateUser(User user) {
@@ -43,5 +42,10 @@ public class UserService {
 
     public void deleteUser(User user) {
         userDao.deleteByUserId(user.getUserId());
+    }
+
+    public User findUserByUserName(String name) {
+
+        return userDao.findUserByUserName(name);
     }
 }

@@ -32,7 +32,7 @@
 
   <!--Header-part-->
   <div id="header">
-    <h1><a href="/resources/dashboard.html">Matrix Admin</a></h1>
+    <h1><a href="/resources/dashboard.html">CSU Lwg</a></h1>
   </div>
   <!--close-Header-part-->
 
@@ -57,7 +57,7 @@
       <li><a href="javascript:voie(0);" onclick="loadPage(this, '/hotMovie')"><i class="icon icon-inbox"></i> <span>热门电影</span></a> </li>
       <li><a href="javascript:voie(0);" onclick="loadPage(this, '/recommandMovie')"><i class="icon icon-signal"></i> <span>电影推荐</span></a> </li>
       <%--<li><a href="javascript:voie(0);" onclick="loadPage(this, '/getRecommentBook')"><i class="icon icon-signal"></i> <span>图书推荐</span></a> </li>--%>
-      <c:if test="${user.userId == 'admin'}">
+      <c:if test="${user.name == 'admin'}">
       <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>管理员操作</span></a>
         <ul>
           <li><a href="javascript:void(0);" onclick="loadPage(this, '/user/userManage')">用户管理</a></li>
@@ -73,7 +73,9 @@
   </div>
   <!--Footer-part-->
   <div class="row-fluid">
-    <div id="footer" class="span12"> 2013 &copy; Matrix Admin. More Templates <a href="/resources/http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="/resources/http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> </div>
+    <div id="footer" class="span12"> 2016 &copy; 中南大学软件学院 卢卫刚
+      <%--<a href="/http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="/http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> --%>
+    </div>
   </div>
   <!--end-Footer-part-->
 

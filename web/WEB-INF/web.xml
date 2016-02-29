@@ -10,6 +10,10 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/application-*.xml</param-value>
     </context-param>
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/jndi.xml</param-value>
+    </context-param>
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -21,10 +25,19 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>controller</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 
     <filter>
@@ -40,4 +53,11 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <resource-ref>
+        <description> MySQL DB Connection Pool </description>
+        <res-ref-name> jdbc/douban </res-ref-name>
+        <res-type> javax.sql.DataSource </res-type>
+        <res-auth> Container </res-auth>
+        <res-sharing-scope> Shareable </res-sharing-scope>
+    </resource-ref>
 </web-app>

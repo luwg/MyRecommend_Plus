@@ -7,7 +7,7 @@
 					
 	<!-- 指定properties文件所在位置 -->
 	<context:property-placeholder location="/dbcp.properties"/>
-	
+
 	<!-- 定义dataSource数据源 -->
 	<bean id="MyDataSource" destroy-method="close"
 	class="org.apache.commons.dbcp.BasicDataSource">

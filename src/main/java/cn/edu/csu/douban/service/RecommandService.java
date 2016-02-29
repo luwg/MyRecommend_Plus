@@ -8,6 +8,7 @@ import cn.edu.csu.douban.pojo.Movie;
 import cn.edu.csu.douban.pojo.Recommand;
 import cn.edu.csu.douban.pojo.User;
 import cn.edu.csu.douban.util.RecommandUtil;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -139,9 +140,44 @@ public class RecommandService {
         return true;
     }
 
+    public boolean updateRecommandByMahout(){
+        try {
+            long start = System.currentTimeMillis();
+            MyUserBasedRecommender mubr = new MyUserBasedRecommender();
+            RecommandService service = new RecommandService();
+            List<User> users = service.userDao.findAll();
+            List<Recommand> recommandMovie = new ArrayList<Recommand>();
+            for(User user:users) {
+                System.out.println("user="+user.getUserId());
+                //拿到推荐的电影
+                List<RecommendedItem> recommandMovieByMahout = mubr.userBasedRecommender(user.getUserId(),12);
+                if (recommandMovieByMahout.size()>0) {
+                    for(RecommendedItem recommendItems:recommandMovieByMahout) {
+                        Movie movie =  service.movieDao.findById((int)(recommendItems.getItemID()));
+                        Recommand recommand = new Recommand();
+                        recommand.setUser(user);
+                        recommand.setMovie(movie);
+                        recommand.setRate(recommendItems.getValue());
+                        recommandMovie.add(recommand);
+                    }
+                }
+            }
+            System.out.println(recommandMovie.size());
+            service.recommandDao.turncateTable(TABLE_NAME);
+            service.recommandDao.batchSave(recommandMovie);
+            long end = System.currentTimeMillis();
+            System.out.println("运行时间："+(end-start)/1000+"秒");
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
 
     public static void main(String[] args) {
         RecommandService service = new RecommandService();
-        service.updateRecommand();
+        //service.updateRecommand();
+        service.updateRecommandByMahout();
     }
 }

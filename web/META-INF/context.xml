@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-<Resource name="jdbc/douban_recommand" auth="Container" type="javax.sql.DataSource"
+<Resource name="jdbc/douban" auth="Container" type="javax.sql.DataSource"
           username="root"
           password="916568"
           driverClassName="com.mysql.jdbc.Driver"
-          url="jdbc:mysql://localhost:3306/douban_recommand"
+          url="jdbc:mysql://localhost:3306/douban"
           maxActive="15"
           maxIdle="7"
           defaultTransactionIsolation="READ_COMMITTED"

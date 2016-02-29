@@ -145,7 +145,7 @@ public class MovieAction {
     public ModelAndView updateRecommand(HttpSession session) {
         User user = (User) session.getAttribute("user");
         RecommandService service = new RecommandService();
-        boolean flag = service.updateRecommand();
+        boolean flag = service.updateRecommandByMahout();
         ModelAndView mv = new ModelAndView();
         mv.addObject("flag", flag);
         mv.setViewName("updateRecommand");

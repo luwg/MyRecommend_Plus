@@ -65,6 +65,9 @@ public class UserAction {
     @RequestMapping(value = "/registerCommit", method = RequestMethod.POST)
     public ModelAndView registerResult(User user,HttpSession session) {
         ModelAndView mv = new ModelAndView();
+        if (StringUtils.isBlank(user.getFavorite())) {
+            user.setFavorite("爱情");
+        }
         if (StringUtils.isBlank(user.getName()) || StringUtils.isBlank(user.getPassword())) {
             mv.addObject("register_msg","用户名和密码都要填哦");
             mv.setViewName("register");

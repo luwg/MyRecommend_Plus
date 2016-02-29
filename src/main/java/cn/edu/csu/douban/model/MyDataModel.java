@@ -14,9 +14,10 @@ public class MyDataModel {
 			dataSource.setServerName("127.0.0.1");
 			dataSource.setUser("root");
 			dataSource.setPassword("916568");
-			dataSource.setDatabaseName("douban_recommand");
+			dataSource.setDatabaseName("douban");
 			// use JNDI
-			dataModel = new MySQLJDBCDataModel(DataBaseUtil.getDataSource(),"t_active_user_comment", "user_id", "movie_Id","rate","144");
+			/*dataModel = new MySQLJDBCDataModel(dataSource,"t_active_user_comment", "user_id", "movie_Id","rate","");*/
+			dataModel = new MySQLJDBCDataModel(DataBaseUtil.getDataSource(),"t_active_user_comment", "user_id", "movie_Id","rate","");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
